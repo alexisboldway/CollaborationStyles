@@ -5,7 +5,94 @@
   <title>Collaboration Style Quiz</title>
   <!-- Google Fonts: Lato -->
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Apply Lato font to the entire page */
+    body {
+      font-family: 'Lato', sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+    
+    /* Container styling for the quiz */
+    .container {
+      max-width: 700px;
+      margin: 50px auto;
+      background: #fff;
+      padding: 40px 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Header styling */
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 40px;
+      font-size: 1.8em;
+    }
+    
+    /* Each question block */
+    .question {
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    
+    .question:last-of-type {
+      border-bottom: none;
+    }
+    
+    /* Bold styling for question text */
+    .question p {
+      font-size: 1.1em;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: #444;
+    }
+    
+    /* Answer labels - stacked on their own lines with smaller font */
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.9em;
+      font-weight: 400;
+      cursor: pointer;
+      line-height: 1.5;
+    }
+    
+    /* Larger red submit button */
+    button {
+      display: block;
+      width: 100%;
+      padding: 16px;
+      font-size: 1.2em;
+      background-color: #d32f2f;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 30px;
+      transition: background-color 0.3s ease;
+    }
+    
+    button:hover {
+      background-color: #b71c1c;
+    }
+    
+    /* Super large red result text */
+    #result {
+      margin-top: 40px;
+      padding: 25px;
+      background-color: #ffe6e6;
+      border: 2px solid #ff0000;
+      border-radius: 5px;
+      font-size: 2.5em;
+      text-align: center;
+      color: #d32f2f;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -31,7 +118,7 @@
           Tackle the problem directly
         </label>
       </div>
-
+      
       <!-- Question 2 -->
       <div class="question">
         <p>2. When working on a team project, how do you contribute?</p>
@@ -52,7 +139,7 @@
           I focus on solving problems quickly
         </label>
       </div>
-
+      
       <!-- Question 3 -->
       <div class="question">
         <p>3. How do you handle feedback from peers?</p>
@@ -73,7 +160,7 @@
           I analyze and implement changes swiftly
         </label>
       </div>
-
+      
       <!-- Question 4 -->
       <div class="question">
         <p>4. How do you manage your workload under pressure?</p>
@@ -94,7 +181,7 @@
           I directly address issues as they arise
         </label>
       </div>
-
+      
       <!-- Question 5 -->
       <div class="question">
         <p>5. How do you approach setting deadlines?</p>
@@ -115,7 +202,7 @@
           I set deadlines and adjust quickly if challenges arise
         </label>
       </div>
-
+      
       <!-- Question 6 -->
       <div class="question">
         <p>6. How do you approach brainstorming sessions?</p>
@@ -136,7 +223,7 @@
           I quickly propose solutions to drive the discussion forward
         </label>
       </div>
-
+      
       <!-- Question 7 -->
       <div class="question">
         <p>7. In conflict situations, what is your usual reaction?</p>
@@ -157,7 +244,7 @@
           I focus on finding a practical solution to end the conflict
         </label>
       </div>
-
+      
       <!-- Question 8 -->
       <div class="question">
         <p>8. How do you share your ideas in a meeting?</p>
@@ -178,7 +265,7 @@
           I present my ideas clearly and focus on solutions
         </label>
       </div>
-
+      
       <!-- Question 9 -->
       <div class="question">
         <p>9. How do you prioritize tasks in a group project?</p>
@@ -199,7 +286,7 @@
           I quickly organize tasks and address any issues immediately
         </label>
       </div>
-
+      
       <!-- Question 10 -->
       <div class="question">
         <p>10. How do you handle unexpected changes in plans?</p>
@@ -220,13 +307,41 @@
           I analyze the situation and implement solutions immediately
         </label>
       </div>
-
+      
       <button type="submit">Submit</button>
     </form>
-
-    <!-- Result area -->
     <div id="result"></div>
   </div>
-  <script src="script.js"></script>
+  
+  <script>
+    document.getElementById('quizForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const scores = { 1: 0, 2: 0, 3: 0, 4: 0 };
+      const formData = new FormData(this);
+      for (let answer of formData.values()) {
+        scores[Number(answer)]++;
+      }
+      
+      let highestScore = 0;
+      let selectedStyle = null;
+      for (const style in scores) {
+        if (scores[style] > highestScore) {
+          highestScore = scores[style];
+          selectedStyle = style;
+        }
+      }
+      
+      const styleMap = {
+        1: "Assertive Collaborator",
+        2: "Passive Participant",
+        3: "Conflict Avoidant",
+        4: "Direct Problem-Solver"
+      };
+      
+      document.getElementById('result').textContent =
+        "Your collaboration style is: " + styleMap[selectedStyle];
+    });
+  </script>
 </body>
 </html>
