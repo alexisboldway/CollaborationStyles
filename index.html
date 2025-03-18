@@ -28,8 +28,17 @@
     h1 {
       text-align: center;
       color: #333;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
       font-size: 1.8em;
+    }
+    
+    /* Introduction text styling */
+    .intro {
+      font-size: 1em;
+      color: #555;
+      margin-bottom: 30px;
+      line-height: 1.5;
+      text-align: center;
     }
     
     /* Each question block */
@@ -65,8 +74,8 @@
     button {
       display: block;
       width: 100%;
-      padding: 20px;           /* Increased padding */
-      font-size: 1.5em;        /* Increased font size */
+      padding: 20px;
+      font-size: 1.5em;
       background-color: #d32f2f;
       color: white;
       border: none;
@@ -80,14 +89,14 @@
       background-color: #b71c1c;
     }
     
-    /* Result area with 14px font */
+    /* Result area with 14px font for easier reading */
     #result {
       margin-top: 40px;
       padding: 25px;
       background-color: #ffe6e6;
       border: 2px solid #ff0000;
       border-radius: 5px;
-      font-size: 14px;  /* Changed to 14px for easier reading */
+      font-size: 14px;
       text-align: center;
       color: #d32f2f;
       font-weight: bold;
@@ -98,6 +107,9 @@
 <body>
   <div class="container">
     <h1>Find Your Collaboration Style</h1>
+    <p class="intro">
+      Welcome to the Collaboration Style Quiz! This quiz is designed to help you discover your unique approach to working with others. Through 10 carefully crafted questions, you'll receive insight into whether you're an Assertive Collaborator, Passive Participant, Conflict Avoidant, or Direct Problem-Solver. Understanding your collaboration style can help you leverage your strengths and identify areas for growth, leading to more effective teamwork and better outcomes. Let's begin and find out how you can enhance your team dynamics!
+    </p>
     <form id="quizForm">
       <!-- Question 1 -->
       <div class="question">
