@@ -33,7 +33,7 @@ document.getElementById('quizForm').addEventListener('submit', function(e) {
       4: "Direct Problem-Solver"
     };
   
-    // Show the result in the #result div.
+    // Display the result.
     document.getElementById('result').textContent =
       "Your collaboration style is: " + styleMap[selectedStyle];
   });

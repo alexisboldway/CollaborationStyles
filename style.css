@@ -1,4 +1,4 @@
-/* Use Lato for all text. Ensure you have internet to load the font. */
+/* Apply Lato font to the entire page */
 body {
     font-family: 'Lato', sans-serif;
     background-color: #f9f9f9;
@@ -6,27 +6,28 @@ body {
     padding: 0;
   }
   
-  /* The container that holds the quiz */
+  /* Container styling for the quiz */
   .container {
     max-width: 700px;
     margin: 50px auto;
     background: #fff;
-    padding: 30px;
+    padding: 40px 30px;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
   
-  /* Quiz title */
+  /* Header styling */
   h1 {
     text-align: center;
     color: #333;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
+    font-size: 1.8em;
   }
   
   /* Each question block */
   .question {
-    margin-bottom: 25px;
-    padding: 15px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
     border-bottom: 1px solid #e0e0e0;
   }
   
@@ -37,48 +38,50 @@ body {
   /* Bold styling for question text */
   .question p {
     font-size: 1.1em;
-    font-weight: 700;  /* Bold */
+    font-weight: 700;
     margin-bottom: 15px;
     color: #444;
   }
   
-  /* Answer labels - stacked on their own lines */
+  /* Answer labels - stacked on their own lines with smaller font */
   label {
-    display: block;         /* Stack each answer on its own line */
-    margin-bottom: 10px;
-    font-size: 0.85em;
-    font-weight: 400;       /* Normal weight */
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9em;
+    font-weight: 400;
     cursor: pointer;
     line-height: 1.5;
   }
   
-  /* The submit button */
+  /* Larger red submit button */
   button {
     display: block;
     width: 100%;
-    padding: 12px;
-    font-size: 1em;
-    background-color: #007acc;
+    padding: 16px;
+    font-size: 1.2em;
+    background-color: #d32f2f;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: 30px;
+    transition: background-color 0.3s ease;
   }
   
   button:hover {
-    background-color: #005fa3;
+    background-color: #b71c1c;
   }
   
-  /* The result box after submission */
+  /* Super large red result text */
   #result {
-    margin-top: 30px;
-    padding: 20px;
-    background-color: #e6ffe6;
-    border: 1px solid #b3ffb3;
+    margin-top: 40px;
+    padding: 25px;
+    background-color: #ffe6e6;
+    border: 2px solid #ff0000;
     border-radius: 5px;
-    font-size: 1.1em;
+    font-size: 2.5em;
     text-align: center;
-    color: #333;
+    color: #d32f2f;
+    font-weight: bold;
   }
   
