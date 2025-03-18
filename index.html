@@ -80,7 +80,7 @@
       background-color: #b71c1c;
     }
     
-    /* Super large red result text */
+    /* Super large red result text with pre-wrap to show line breaks */
     #result {
       margin-top: 40px;
       padding: 25px;
@@ -91,6 +91,7 @@
       text-align: center;
       color: #d32f2f;
       font-weight: bold;
+      white-space: pre-wrap;
     }
   </style>
 </head>
@@ -339,8 +340,81 @@
         4: "Direct Problem-Solver"
       };
       
-      document.getElementById('result').textContent =
-        "Your collaboration style is: " + styleMap[selectedStyle];
+      const descriptions = {
+        1: `Definition:
+You balance assertiveness with collaboration. This means you actively engage in discussions—voicing your perspective—while genuinely encouraging input from others. You strive for solutions that consider the team’s collective ideas and values, maintaining clarity and momentum.
+
+Key Characteristics:
+- Direct but solution-focused: You address issues or conflicts promptly, keeping them from escalating.
+- Empathy with structure: You aim to hear everyone’s perspective but also drive the team toward actionable steps.
+- Growth-oriented: You appreciate feedback and encourage others to share ideas for continuous improvement.
+
+Potential Pitfalls:
+- Overextension: Because you like to involve everyone, decision-making can sometimes slow down if you’re not mindful of deadlines.
+- Risk of overshadowing quieter voices: Even with good intentions, your proactive style can inadvertently discourage those more reserved if not managed carefully.
+
+Suggestions for Growth:
+- Timeboxing: When collaborating, set clear timelines or structured agendas to maintain efficiency.
+- Active listening checks: Periodically pause to confirm that quieter team members have been heard.
+- Delegate problem-solving roles: Encourage others to lead certain discussions, reinforcing a shared leadership dynamic.`,
+        
+        2: `Definition:
+You tend to let others lead conversations and make decisions, often to keep the peace or avoid conflict. While you may maintain harmony on the surface, your valuable insights might go unheard, and decisions sometimes happen without your meaningful input.
+
+Key Characteristics:
+- Easygoing: You’re generally seen as approachable and agreeable, avoiding confrontation.
+- Support-focused: You’re inclined to back others rather than push your own agenda.
+- Prefers structure from others: You often wait for leaders or more vocal teammates to set direction.
+
+Potential Pitfalls:
+- Missed opportunities: By deferring to others, you risk not sharing insights or raising critical objections.
+- Resentment buildup: Over time, holding back concerns can lead to internal frustration.
+- Limited influence: Colleagues may overlook you for leadership roles due to your low profile.
+
+Suggestions for Growth:
+- Speak up in low-stakes settings: Practice voicing your thoughts in smaller meetings or 1:1s to build confidence.
+- Prepare points beforehand: If you hesitate in spontaneous discussions, jot down key points in advance.
+- Set small assertiveness goals: Aim to contribute at least one idea or question in each meeting to strengthen your voice over time.`,
+        
+        3: `Definition:
+You prefer harmony, going out of your way to sidestep disagreements—sometimes to the detriment of addressing underlying issues. Although your intentions are noble, unresolved conflicts can accumulate, leading to larger problems later on.
+
+Key Characteristics:
+- Peace-oriented: You value friendly work environments and do what you can to keep interactions pleasant.
+- High empathy: You’re sensitive to others’ discomfort and try to cushion tough conversations.
+- Reluctant to escalate: You often hope problems work themselves out without direct intervention.
+
+Potential Pitfalls:
+- Delayed resolutions: Avoiding conflict frequently stalls decision-making or resolution of important issues.
+- Miscommunication: Others might perceive your silence as agreement or lack of concern.
+- Bigger blowups later: Prolonged avoidance can lead to a sudden, more intense confrontation when issues finally surface.
+
+Suggestions for Growth:
+- Reframe conflict: See disagreements as opportunities for growth and clarity, not threats to harmony.
+- Structured conflict resolution: Use techniques like the E-A-R model (Empathy, Address, Resolve) to handle issues step by step.
+- Seek mediation or support: If direct confrontation feels daunting, ask a trusted colleague or mentor to facilitate discussions.`,
+        
+        4: `Definition:
+You value quick, decisive actions and often jump straight into solutions. While your efficiency can be a major asset, you may not always give sufficient space for others’ ideas or for the emotional aspects of conflict.
+
+Key Characteristics:
+- Action-oriented: You focus on results and prefer not to dwell too long on discussion.
+- Confident in decisions: You trust your own instincts and can move forward swiftly.
+- Straight-talking style: You speak candidly, prioritizing facts and data.
+
+Potential Pitfalls:
+- Overlooking emotional context: Colleagues may feel dismissed if their concerns or feelings aren’t acknowledged.
+- Insufficient consensus: Quick decisions can create pushback if others haven’t bought in.
+- Perceived as abrasive: In rushing to solve issues, you may appear abrupt or dismissive of collaboration.
+
+Suggestions for Growth:
+- Pause for input: Before finalizing a decision, invite teammates to share concerns or alternative approaches.
+- Acknowledge feelings: Even a brief nod to someone’s frustration or ideas can build goodwill.
+- Build consensus with clarity: Show how your solution aligns with shared goals or values, so others feel invested rather than steamrolled.`
+      };
+      
+      document.getElementById('result').innerText =
+        "Your collaboration style is: " + styleMap[selectedStyle] + "\n\n" + descriptions[selectedStyle];
     });
   </script>
 </body>
