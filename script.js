@@ -15,9 +15,9 @@ document.getElementById('quizForm').addEventListener('submit', function(e) {
       scores[Number(answer)]++;
     }
   
-    // Determine the style with the highest score.
+    // Determine which style has the highest score.
     let highestScore = 0;
-    let selectedStyle;
+    let selectedStyle = null;
     for (const style in scores) {
       if (scores[style] > highestScore) {
         highestScore = scores[style];
@@ -25,7 +25,7 @@ document.getElementById('quizForm').addEventListener('submit', function(e) {
       }
     }
   
-    // Map the score to a descriptive style.
+    // Map numeric style to descriptive text.
     const styleMap = {
       1: "Assertive Collaborator",
       2: "Passive Participant",
@@ -33,7 +33,8 @@ document.getElementById('quizForm').addEventListener('submit', function(e) {
       4: "Direct Problem-Solver"
     };
   
-    // Display the result.
-    document.getElementById('result').textContent = "Your collaboration style is: " + styleMap[selectedStyle];
+    // Show the result in the #result div.
+    document.getElementById('result').textContent =
+      "Your collaboration style is: " + styleMap[selectedStyle];
   });
   

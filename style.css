@@ -1,4 +1,4 @@
-/* Apply Lato font to the entire page */
+/* Use Lato for all text. Ensure you have internet to load the font. */
 body {
     font-family: 'Lato', sans-serif;
     background-color: #f9f9f9;
@@ -6,7 +6,7 @@ body {
     padding: 0;
   }
   
-  /* Container styling for the quiz */
+  /* The container that holds the quiz */
   .container {
     max-width: 700px;
     margin: 50px auto;
@@ -16,14 +16,14 @@ body {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
   
-  /* Header styling */
+  /* Quiz title */
   h1 {
     text-align: center;
     color: #333;
     margin-bottom: 30px;
   }
   
-  /* Question block styling */
+  /* Each question block */
   .question {
     margin-bottom: 25px;
     padding: 15px;
@@ -34,25 +34,25 @@ body {
     border-bottom: none;
   }
   
-  /* Bold question text */
+  /* Bold styling for question text */
   .question p {
     font-size: 1.1em;
-    font-weight: bold;
+    font-weight: 700;  /* Bold */
     margin-bottom: 15px;
     color: #444;
   }
   
-  /* Answer label styling (smaller & normal weight) */
+  /* Answer labels - stacked on their own lines */
   label {
-    display: block;
+    display: block;         /* Stack each answer on its own line */
     margin-bottom: 10px;
     font-size: 0.85em;
-    font-weight: normal;
+    font-weight: 400;       /* Normal weight */
     cursor: pointer;
     line-height: 1.5;
   }
   
-  /* Submit button styling */
+  /* The submit button */
   button {
     display: block;
     width: 100%;
@@ -70,7 +70,7 @@ body {
     background-color: #005fa3;
   }
   
-  /* Result box styling */
+  /* The result box after submission */
   #result {
     margin-top: 30px;
     padding: 20px;
